@@ -1,0 +1,24 @@
+<Project>
+    <PropertyGroup>
+        <TargetFramework>net9.0</TargetFramework>
+        <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+        <CodeAnalysisTreatWarningsAsErrors>false</CodeAnalysisTreatWarningsAsErrors>
+        <GenerateDocumentationFile>true</GenerateDocumentationFile>
+        <NoDefaultExcludes>true</NoDefaultExcludes>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+        <EnforceCodeStyleInBuild>true</EnforceCodeStyleInBuild>
+        <AnalysisLevel>latest</AnalysisLevel>
+        <AnalysisMode>All</AnalysisMode>
+        <ManagePackageVersionsCentrally>true</ManagePackageVersionsCentrally>
+        <ContainerImageTags>1.0.0-rc;latest</ContainerImageTags>
+    </PropertyGroup>
+    <PropertyGroup>
+        <Authors>Beshoy Hindy</Authors>
+        <Company>Beshoy Hindy</Company>
+        <Copyright>Copyright © $([System.DateTime]::Now.Year)</Copyright>
+        <PackageProjectUrl>https://github.com/BeshoyHindy/Expense-Tracker</PackageProjectUrl>
+        <RepositoryUrl>https://github.com/BeshoyHindy/Expense-Tracker</RepositoryUrl>
+        <RepositoryType>git</RepositoryType>
+    </PropertyGroup>
+</Project>

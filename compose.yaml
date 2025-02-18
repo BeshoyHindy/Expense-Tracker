@@ -1,0 +1,36 @@
+﻿services:
+  api:
+    image: expense-tracker-api
+    build:
+      context: .
+      dockerfile: src/ExpenseTracker.Api/Dockerfile
+    ports:
+      - "5001:5001"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_URLS=http://+:5001
+      - ConnectionStrings__DefaultConnection=Server=db;Database=ExpenseTrackerDb;User Id=sa;Password=YourStrong@Passw0rd;TrustServerCertificate=True;
+    depends_on:
+      - db
+    networks:
+      - expense-tracker-network
+
+  db:
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    environment:
+      - ACCEPT_EULA=Y
+      - MSSQL_SA_PASSWORD=YourStrong@Passw0rd
+    ports:
+      - "1433:1433"
+    volumes:
+      - sqlserver_data:/var/opt/mssql
+    networks:
+      - expense-tracker-network
+
+volumes:
+  sqlserver_data:
+    driver: local
+
+networks:
+  expense-tracker-network:
+    driver: bridge
