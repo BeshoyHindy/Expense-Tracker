@@ -79,3 +79,10 @@ POST /api/expenses
     "userId": "user-id-here"
 }
 ```
+
+## Testing
+
+Run the tests:
+```bash
+dotnet test
+```
